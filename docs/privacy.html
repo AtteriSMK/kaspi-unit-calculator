@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Kaspi Unit Calculator</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 0 24px 80px;
+        color: #1a1a1a;
+        line-height: 1.55;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 0 0 8px;
+      }
+      .subtitle {
+        color: #6b7280;
+        margin: 0 0 32px;
+        font-size: 14px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 32px 0 8px;
+      }
+      a {
+        color: #f14635;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-size: 0.92em;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #e5e7eb;
+        margin: 32px 0;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Privacy Policy — Kaspi Unit Calculator</h1>
+    <p class="subtitle">Last updated: 15 May 2026</p>
+
+    <h2>1. Какие данные мы собираем</h2>
+    <p>
+      Расширение <strong>Kaspi Unit Calculator</strong> не собирает, не передаёт и не хранит
+      персональные данные пользователя на внешних серверах. Все настройки и история
+      расчётов сохраняются <strong>локально</strong> в браузере пользователя через
+      Chrome API <code>chrome.storage.sync</code> и <code>chrome.storage.local</code>.
+    </p>
+
+    <h2>2. Что сохраняется локально</h2>
+    <ul>
+      <li>Пользовательские настройки калькулятора (себестоимость, комиссия, тарифы логистики, налог).</li>
+      <li>История расчётов по карточкам Kaspi.kz (ID товара, название, введённые значения).</li>
+      <li>Список скрытых карточек (товаров, на которых пользователь закрыл виджет).</li>
+    </ul>
+
+    <h2>3. Какие данные мы запрашиваем со страниц Kaspi.kz</h2>
+    <p>
+      На странице товара Kaspi.kz расширение читает из открытой страницы:
+      идентификатор товара, название и текущую цену из инлайн-JSON, который Kaspi
+      сам выгружает в HTML. Эти данные используются только для отображения
+      калькулятора в браузере пользователя и <strong>не передаются никаким третьим
+      сторонам</strong>.
+    </p>
+
+    <h2>4. Сторонние сервисы</h2>
+    <p>
+      Расширение не использует аналитику, рекламу, трекеры или внешние API,
+      требующие передачи персональных данных. Не используются Google Analytics,
+      Sentry, Mixpanel или аналоги.
+    </p>
+
+    <h2>5. Разрешения</h2>
+    <ul>
+      <li><code>storage</code> — необходимо для сохранения настроек и истории расчётов локально в браузере.</li>
+      <li>Host match <code>https://kaspi.kz/shop/p/*</code> — необходимо для инжекта калькулятора в карточки товаров Kaspi.kz.</li>
+    </ul>
+
+    <h2>6. Удаление данных</h2>
+    <p>
+      Удалить все данные расширения можно одним из способов:
+    </p>
+    <ul>
+      <li>Удалить расширение из <code>chrome://extensions/</code> — Chrome автоматически очистит storage.</li>
+      <li>В настройках расширения нажать «Сбросить» — настройки вернутся к заводским.</li>
+    </ul>
+
+    <h2>7. Изменения политики</h2>
+    <p>
+      Если политика изменится, обновление публикуется на этой же странице с новой
+      датой «Last updated». Существенные изменения сопровождаются обновлением версии
+      расширения в Chrome Web Store.
+    </p>
+
+    <h2>8. Контакты</h2>
+    <p>
+      По вопросам обработки данных: <a href="https://t.me/atterismk">t.me/atterismk</a>
+    </p>
+
+    <hr />
+    <p class="subtitle">
+      Kaspi Unit Calculator — независимое расширение, не связанное с АО «Kaspi.kz»
+      и не аффилировано с ним.
+    </p>
+  </body>
+</html>

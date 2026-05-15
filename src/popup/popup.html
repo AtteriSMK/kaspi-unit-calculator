@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaspi Unit Calculator — настройки</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__header">
+        <h1 class="popup__title">Kaspi Unit Calculator</h1>
+        <p class="popup__subtitle">Дефолтные значения для расчёта</p>
+      </header>
+
+      <form id="settings-form" class="popup__form" novalidate>
+        <fieldset class="section">
+          <legend class="section__title">Себестоимость и упаковка</legend>
+          <label class="row">
+            <span class="row__label">Себестоимость, ₸</span>
+            <input class="row__input" type="number" name="costPrice" min="0" step="1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Упаковка, ₸</span>
+            <input class="row__input" type="number" name="packagingCost" min="0" step="1" />
+          </label>
+        </fieldset>
+
+        <fieldset class="section">
+          <legend class="section__title">Комиссии Kaspi</legend>
+          <label class="row">
+            <span class="row__label">Комиссия с НДС, %</span>
+            <input class="row__input" type="number" name="commissionPct" min="0" max="100" step="0.1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Тип логистики по умолчанию</span>
+            <select class="row__input" name="selectedLogisticsType">
+              <option value="city">По городу</option>
+              <option value="intercity">Межгород</option>
+              <option value="express">Express</option>
+              <option value="own">Своя доставка</option>
+            </select>
+          </label>
+          <label class="row">
+            <span class="row__label">Логистика «По городу» с НДС, ₸</span>
+            <input class="row__input" type="number" name="logistics.city" min="0" step="1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Логистика «Межгород» с НДС, ₸</span>
+            <input class="row__input" type="number" name="logistics.intercity" min="0" step="1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Логистика «Express» с НДС, ₸</span>
+            <input class="row__input" type="number" name="logistics.express" min="0" step="1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Своя доставка, ₸</span>
+            <input class="row__input" type="number" name="logistics.own" min="0" step="1" />
+          </label>
+        </fieldset>
+
+        <fieldset class="section">
+          <legend class="section__title">Маркетинг и бонусы</legend>
+          <label class="row">
+            <span class="row__label">ДРР (плановый), %</span>
+            <input class="row__input" type="number" name="drrPct" min="0" max="100" step="0.1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Бонус продавца, %</span>
+            <input class="row__input" type="number" name="sellerBonusPct" min="0" max="100" step="0.1" />
+          </label>
+          <label class="row">
+            <span class="row__label">Бонус за отзыв, ₸</span>
+            <input class="row__input" type="number" name="reviewBonus" min="0" max="5000" step="100" />
+          </label>
+        </fieldset>
+
+        <fieldset class="section">
+          <legend class="section__title">Налог</legend>
+          <label class="row">
+            <span class="row__label">Налог, %</span>
+            <input class="row__input" type="number" name="taxPct" min="0" max="100" step="0.1" />
+          </label>
+        </fieldset>
+
+        <fieldset class="section">
+          <legend class="section__title">Поведение</legend>
+          <label class="row row--toggle">
+            <span class="row__label">Показывать калькулятор автоматически</span>
+            <input class="row__toggle" type="checkbox" name="autoShow" />
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn btn--ghost" id="reset-btn">Сбросить</button>
+          <button type="submit" class="btn btn--primary">Сохранить</button>
+        </div>
+
+        <p class="status" id="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>
