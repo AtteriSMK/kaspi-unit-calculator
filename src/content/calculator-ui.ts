@@ -272,8 +272,11 @@ export class KaspiUnitCalcElement {
     this.logisticsSelect.addEventListener('change', () => {
       const t = this.logisticsSelect.value as LogisticsType
       const price = this.parseNumber(this.inputs.plannedSalePrice.value)
-      const rate = kaspiLogisticsRate(price, t, this.logisticsRates)
+      // Fallback берём из popup-дефолтов, НЕ из текущих ставок — иначе при переключении
+      // типа после авто-подстановки 55₸ сетка вернёт 55₸ и для заказа ≥10 000 ₸.
+      const rate = kaspiLogisticsRate(price, t, this.defaults.logistics)
       this.inputs.logisticsRate.value = String(rate)
+      this.logisticsRates[t] = rate
       this.logisticsLabel.textContent = LOGISTICS_LABELS[t]
       this.scheduleRecalc()
     })
@@ -285,12 +288,19 @@ export class KaspiUnitCalcElement {
     })
   }
 
-  /** Применяет авто-тариф логистики на основе суммы заказа. */
+  /**
+   * Применяет авто-тариф логистики на основе суммы заказа.
+   * Источник fallback'а для ≥10 000 ₸ — popup-дефолты (this.defaults.logistics),
+   * а не текущие logisticsRates (иначе при последовательных пересчётах
+   * 1 903 → 55 → 55 popup-дефолт «загрязнится» тиром).
+   * Обязательно синхронизируем this.logisticsRates[t] с DOM-инпутом —
+   * calculate() читает именно logisticsRates, а не значение из DOM.
+   */
   private applyAutoLogistics(price: number): void {
     const t = this.logisticsSelect.value as LogisticsType
-    const rate = kaspiLogisticsRate(price, t, this.logisticsRates)
+    const rate = kaspiLogisticsRate(price, t, this.defaults.logistics)
     this.inputs.logisticsRate.value = String(rate)
-    // Не перезаписываем logisticsRates — popup-дефолты сохраняем для ≥10 000 ₸.
+    this.logisticsRates[t] = rate
   }
 
   // ─── Внешний API ────────────────────────────────────────────────

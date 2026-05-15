@@ -1,7 +1,7 @@
 {
   "name": "kaspi-unit-calculator",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Chrome extension that injects a unit-economics calculator into Kaspi.kz product pages",
   "type": "module",
   "scripts": {
