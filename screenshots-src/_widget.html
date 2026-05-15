@@ -1,0 +1,61 @@
+<!-- Calculator widget snippet, included via fetch() into each scene.
+     Single source of truth for the visual. -->
+<div class="widget">
+  <div class="widget__header">
+    <span class="widget__title">UNIT-калькулятор</span>
+    <span class="widget__chip">2 145 ₸</span>
+    <svg class="widget__icon" viewBox="0 0 12 12"><path fill="currentColor" d="M2 4l4 4 4-4z"/></svg>
+    <svg class="widget__icon" viewBox="0 0 12 12"><path fill="currentColor" d="M9.2 2.1L6 5.3 2.8 2.1 2.1 2.8 5.3 6 2.1 9.2l.7.7L6 6.7l3.2 3.2.7-.7L6.7 6l3.2-3.2z"/></svg>
+  </div>
+
+  <div class="widget__body">
+    <div class="section-label">Цены</div>
+    <div class="field"><span class="field__label">Цена продажи, ₸</span><input class="field__input" value="6 590" /></div>
+    <div class="field"><span class="field__label">Мин. конкурент, ₸</span><input class="field__input _readonly" value="6 850" readonly /></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Себестоимость</div>
+    <div class="field"><span class="field__label">Себестоимость, ₸</span><input class="field__input" value="2 800" /></div>
+    <div class="field"><span class="field__label">Упаковка, ₸</span><input class="field__input" value="80" /></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Комиссии Kaspi</div>
+    <div class="field"><span class="field__label">Комиссия с НДС, %</span><input class="field__input" value="12" /></div>
+    <div class="field"><span class="field__label">Тип логистики</span>
+      <select class="field__select"><option>По городу</option></select>
+    </div>
+    <div class="field"><span class="field__label">Логистика, ₸</span><input class="field__input" value="783" /></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Маркетинг и бонусы</div>
+    <div class="field"><span class="field__label">ДРР, %</span><input class="field__input" value="3" /></div>
+    <div class="field"><span class="field__label">Бонус продавца, %</span><input class="field__input" value="0" /></div>
+    <div class="field"><span class="field__label">Бонус за отзыв, ₸</span><input class="field__input" value="0" /></div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Налог</div>
+    <div class="field"><span class="field__label">Налог, %</span><input class="field__input" value="4" /></div>
+
+    <div class="result">
+      <div class="result__profit">
+        <span class="result__profit-label">Прибыль</span>
+        <span class="result__profit-value _positive">2 145 ₸</span>
+      </div>
+      <div class="metric"><span class="metric__label">Маржа</span><span class="metric__value">32,5 %</span></div>
+      <div class="metric"><span class="metric__label">Наценка</span><span class="metric__value">75,1 %</span></div>
+      <div class="metric"><span class="metric__label">ROI</span><span class="metric__value">74,5 %</span></div>
+      <div class="metric"><span class="metric__label">Цена безубыточности</span><span class="metric__value">4 445 ₸</span></div>
+      <div class="metric"><span class="metric__label">Δ к конкуренту</span><span class="metric__value _positive">−260 ₸</span></div>
+    </div>
+  </div>
+
+  <div class="widget__footer">
+    <div>Сверьте комиссию и тариф логистики в кабинете Kaspi.</div>
+    <div>Поддержка: <a href="#">t.me/atterismk</a></div>
+    <div>Скачать фото из карточки: <a href="#">kscon.kz</a> · <a href="#">t.me/ksp_helperbot</a></div>
+  </div>
+</div>
