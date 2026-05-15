@@ -117,7 +117,5 @@ CWS требует объяснить каждое разрешение.
 ## Privacy Policy URL
 
 ```
-https://<github-username>.github.io/<repo-name>/privacy.html
+https://atterismk.github.io/kaspi-unit-calculator/privacy.html
 ```
-
-(Заполнится после публикации `docs/` на GitHub Pages.)
